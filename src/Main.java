@@ -88,7 +88,18 @@ public class Main {
 
             if (matriz[filarobot][columnarobot] == 'X'){
                 System.out.println("Movimiento bloqueado");
-                vidas--;
+                if (desplazamiento == 'D') {
+                    nuevaColumna--;
+                } else if (desplazamiento == 'S') {
+                    nuevaFila--;
+                } else if (desplazamiento == 'W') {
+                    nuevaFila++;
+                } else if (desplazamiento == 'A'){
+                    nuevaColumna++;
+                } else {
+                    System.out.println("Movimiento no válido. Usa W, A, S o D.");
+                    continue;
+                }
             }
             if (matriz[filarobot][columnarobot] == 'B'){
                 System.out.println("Has recargado 2 baterias");
